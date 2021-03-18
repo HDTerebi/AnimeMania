@@ -48,7 +48,7 @@ for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 for i,v in pairs(game.Workspace.Living:GetChildren()) do
         if v:FindFirstChild("AI") then
             if v.Humanoid.Health > 1 then
-                repeat wait(0.1)
+                repeat wait()
                     game.workspace.Living[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 0, 5)
                     game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Light" })
                     game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "1" })
