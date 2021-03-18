@@ -13,7 +13,7 @@ VirtualUser:ClickButton2(Vector2.new())
 end)
 
 if game.PlaceId == 6284881984 then
-_G.Level = "Bandit Raid"
+while wait(1) do
 for _,v in pairs(game.Workspace.Living[game.Players.LocalPlayer.Name]:GetDescendants()) do
 		if v.Name == "Ban" then
 		    game.Workspace.Living[game.Players.LocalPlayer.Name].Ban:Destroy()
@@ -22,8 +22,8 @@ for _,v in pairs(game.Workspace.Living[game.Players.LocalPlayer.Name]:GetDescend
 	
     if game.Workspace.Living[game.Players.LocalPlayer.Name]:FindFirstChild("HumanoidRootPart") then
 game:GetService("ReplicatedStorage").Remotes.CreateRoom:InvokeServer(_G.Level, "RandomPassword")
-wait(0.3)
 game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
+end
 end
 end
 
