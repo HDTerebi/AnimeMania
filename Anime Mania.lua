@@ -36,12 +36,12 @@ while wait() do
     end
 for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 		if v.Name == "ClientMain" then
-		    game:GetService("Players").TheHiemenDestroyer.Backpack.ClientMain.Disabled = true
+		    game:GetService("Players").LocalPlayer.Backpack.ClientMain.Disabled = true
 		end
     end
 for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 		if v.Name == "ArenaClient" then
-		    game:GetService("Players").TheHiemenDestroyer.Backpack.ArenaClient.Disabled = true
+		    game:GetService("Players").LocalPlayer.Backpack.ArenaClient.Disabled = true
 		end
     end
     
@@ -50,11 +50,11 @@ for i,v in pairs(game.Workspace.Living:GetChildren()) do
             if v.Humanoid.Health > 1 then
                 repeat wait()
                     game.workspace.Living[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0, 0, 5)
-                    game:GetService("Players").TheHiemenDestroyer.Backpack.Input.Remote:FireServer({ "Light" })
-                    game:GetService("Players").TheHiemenDestroyer.Backpack.Input.Remote:FireServer({ "Skill", "1" })
-                    game:GetService("Players").TheHiemenDestroyer.Backpack.Input.Remote:FireServer({ "Skill", "2" })
-                    game:GetService("Players").TheHiemenDestroyer.Backpack.Input.Remote:FireServer({ "Skill", "3" })
-                    game:GetService("Players").TheHiemenDestroyer.Backpack.Input.Remote:FireServer({ "Skill", "4" })
+                    game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Light" })
+                    game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "1" })
+                    game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "2" })
+                    game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "3" })
+                    game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "4" })
 until v.Humanoid.Health <= 0
         end
             end
