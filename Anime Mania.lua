@@ -52,12 +52,16 @@ for i,v in pairs(game.Workspace.Living:GetChildren()) do
                     game.workspace.Living[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, 0, 5)
                     game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Light" })
 		    game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "1" })
+		    game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "TeamAssist" })
                     game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Light" })
                     game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "2" })
+		    game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "TeamAssist" })
                     game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Light" })
                     game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "3" })
+		    game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "TeamAssist" })
                     game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Light" })
                     game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "4" })
+		    game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "TeamAssist" })
         end
             end
 end
