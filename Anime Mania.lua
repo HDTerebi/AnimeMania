@@ -5,7 +5,8 @@ if not game:IsLoaded() then
 	Loading:Destroy()
 end
 
-if game.PlaceId == 6284881984 and _G.AutoFeed == true and game:IsLoaded() then
+if game.PlaceId == 6284881984 and _G.AutoFeed == true then
+	game:IsLoaded()
 wait(2)
 print("Auto feed on")
 for _,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.CharacterSelection.Inventory.Inventory:GetChildren()) do
@@ -23,9 +24,10 @@ game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
 end
 end
 
-if game.PlaceId == 6284881984 and _G.AutoFeed == false and game:IsLoaded() then
-print("Auto feed off")
+if game.PlaceId == 6284881984 and _G.AutoFeed == false then
+	game:IsLoaded()
 wait(2)
+	print("Auto feed off")
 while wait() do
 game:GetService("ReplicatedStorage").Remotes.CreateRoom:InvokeServer(_G.Level, "RandomPassword")
 game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
