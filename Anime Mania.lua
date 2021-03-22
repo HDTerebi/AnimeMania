@@ -7,7 +7,7 @@ end
 
 wait(2)
 
-if game.PlaceId == 6284881984 and _G.Upgrade == true then
+if game.PlaceId == 6284881984 and _G.AutoFeed == true then
 wait(2)
 print("Auto feed on")
 for _,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.CharacterSelection.Inventory.Inventory:GetChildren()) do
@@ -25,7 +25,7 @@ game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
 end
 end
 
-if game.PlaceId == 6284881984 and _G.Upgrade == false then
+if game.PlaceId == 6284881984 and _G.AutoFeed == false then
 print("Auto feed off")
 wait(2)
 while wait() do
