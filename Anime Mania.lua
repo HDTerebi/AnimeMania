@@ -7,7 +7,7 @@ end
 
 wait(2)
 
-if game.PlaceId == 6284881984 and _G.Upgrade == true then
+if game.PlaceId == 6284881984 then
 wait(2)
 for _,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.CharacterSelection.Inventory.Inventory:GetChildren()) do
 if v:IsA("ImageLabel") then
