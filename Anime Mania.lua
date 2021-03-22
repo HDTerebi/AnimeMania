@@ -7,8 +7,9 @@ end
 
 wait(2)
 
-if game.PlaceId == 6284881984 then
+if game.PlaceId == 6284881984 and _G.Upgrade == true then
 wait(2)
+print("Auto feed on")
 for _,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.CharacterSelection.Inventory.Inventory:GetChildren()) do
 if v:IsA("ImageLabel") then
    if v.Star.Visible == false then
@@ -18,6 +19,15 @@ if v:IsA("ImageLabel") then
 end
 end
 end
+while wait() do
+game:GetService("ReplicatedStorage").Remotes.CreateRoom:InvokeServer(_G.Level, "RandomPassword")
+game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
+end
+end
+
+if game.PlaceId == 6284881984 and _G.Upgrade == false then
+print("Auto feed off")
+wait(2)
 while wait() do
 game:GetService("ReplicatedStorage").Remotes.CreateRoom:InvokeServer(_G.Level, "RandomPassword")
 game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
@@ -65,10 +75,3 @@ for i,v in pairs(game.Workspace.Living:GetChildren()) do
 end
 end)
 end
-
-game.StarterGui:SetCore("SendNotification", {
-Title = "Anime Mania Auto Farm";
-Text = "Made By Terebi#0001",
-Icon = "rbxassetid://5472203252";
-Duration = 6;
-})
