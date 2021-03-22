@@ -4,23 +4,25 @@ if not game:IsLoaded() then
 	game.Loaded:Wait()
 	Loading:Destroy()
 end
+
 wait(2)
 
-local VirtualUser=game:service'VirtualUser'
-game:service'Players'.LocalPlayer.Idled:connect(function()
-VirtualUser:CaptureController()
-VirtualUser:ClickButton2(Vector2.new())
-end)
-
-if game.PlaceId == 6284881984 then
+if game.PlaceId == 6284881984 and _G.Upgrade == true then
 wait(2)
-    if game.Workspace.Living[game.Players.LocalPlayer.Name]:FindFirstChild("HumanoidRootPart") then
-			while wait() do
+for _,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.CharacterSelection.Inventory.Inventory:GetChildren()) do
+if v:IsA("ImageLabel") then
+   if v.Star.Visible == false then
+   game:GetService("ReplicatedStorage").Remotes.FeedCharacter:InvokeServer({ [v.Key.Value]= true }, _G.CharacterID)
+   game:GetService("ReplicatedStorage").Remotes.CharacterSelection:InvokeServer()
+   game:GetService("ReplicatedStorage").Remotes.CharacterCheck:InvokeServer()
+end
+end
+end
+while wait() do
 game:GetService("ReplicatedStorage").Remotes.CreateRoom:InvokeServer(_G.Level, "RandomPassword")
 game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
-				end
 end
-	end
+end
 
 while wait() do
     pcall(function()
@@ -63,3 +65,10 @@ for i,v in pairs(game.Workspace.Living:GetChildren()) do
 end
 end)
 end
+
+game.StarterGui:SetCore("SendNotification", {
+Title = "Anime Mania Auto Farm";
+Text = "Made By Terebi#0001",
+Icon = "rbxassetid://5472203252";
+Duration = 6;
+})
