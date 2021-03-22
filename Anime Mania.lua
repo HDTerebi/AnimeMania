@@ -13,20 +13,14 @@ VirtualUser:ClickButton2(Vector2.new())
 end)
 
 if game.PlaceId == 6284881984 then
-while wait(1) do
-for _,v in pairs(game.Workspace.Living[game.Players.LocalPlayer.Name]:GetDescendants()) do
-		if v.Name == "Ban" then
-		    game.Workspace.Living[game.Players.LocalPlayer.Name].Ban:Destroy()
-		end
-    end
-	
+wait(2)
     if game.Workspace.Living[game.Players.LocalPlayer.Name]:FindFirstChild("HumanoidRootPart") then
+			while wait() do
 game:GetService("ReplicatedStorage").Remotes.CreateRoom:InvokeServer(_G.Level, "RandomPassword")
-			wait(0.5)
 game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
+				end
 end
-end
-end
+	end
 
 while wait() do
     pcall(function()
