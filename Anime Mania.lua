@@ -1,6 +1,6 @@
 game.Loaded:Wait()
 if game.PlaceId == 6284881984 and _G.AutoFeed == true and game:IsLoaded() then
-wait(3)
+wait(5)
 print("Auto feed on")
 for _,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.CharacterSelection.Inventory.Inventory:GetChildren()) do
 if v:IsA("ImageLabel") then
