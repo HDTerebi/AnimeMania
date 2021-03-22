@@ -1,12 +1,4 @@
-if not game:IsLoaded() then
-	local Loading = Instance.new("Message",workspace)
-	Loading.Text = 'Waiting For The Game To Load....'
-	game.Loaded:Wait()
-	Loading:Destroy()
-end
-
-if game.PlaceId == 6284881984 and _G.AutoFeed == true then
-	game:IsLoaded()
+if game.PlaceId == 6284881984 and _G.AutoFeed == true and game:IsLoaded() then
 wait(2)
 print("Auto feed on")
 for _,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.CharacterSelection.Inventory.Inventory:GetChildren()) do
@@ -24,8 +16,7 @@ game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
 end
 end
 
-if game.PlaceId == 6284881984 and _G.AutoFeed == false then
-	game:IsLoaded()
+if game.PlaceId == 6284881984 and _G.AutoFeed == false and game:IsLoaded() then
 wait(2)
 	print("Auto feed off")
 while wait() do
