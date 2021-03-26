@@ -27,7 +27,7 @@ end
 
 while wait() do
     pcall(function()
-        wait(0.08)
+        wait(0.1)
     for _,v in pairs(game.Workspace.Living[game.Players.LocalPlayer.Name]:GetDescendants()) do
 		if v.Name == "Ban" then
 		    game.Workspace.Living[game.Players.LocalPlayer.Name].Ban:Destroy()
