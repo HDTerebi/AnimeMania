@@ -27,7 +27,7 @@ end
 
 while wait() do
     pcall(function()
-        wait(.06)
+        wait(0.01)
     for _,v in pairs(game.Workspace.Living[game.Players.LocalPlayer.Name]:GetDescendants()) do
 		if v.Name == "Ban" then
 		    game.Workspace.Living[game.Players.LocalPlayer.Name].Ban:Destroy()
@@ -51,14 +51,8 @@ for i,v in pairs(game.Workspace.Living:GetChildren()) do
                     game.workspace.Living[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, 0, 5)
                     game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Light" })
 		    game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "1" })
-		    game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "TeamAssist" })
-                    game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Light" })
                     game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "2" })
-		    game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "TeamAssist" })
-                    game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Light" })
                     game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "3" })
-		    game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "TeamAssist" })
-                    game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Light" })
                     game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "4" })
 		    game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "TeamAssist" })
         end
