@@ -1,5 +1,4 @@
-game.Loaded:Wait()
-if game.PlaceId == 6284881984 and _G.AutoFeed == true and game:IsLoaded() then
+if game.PlaceId == 6284881984 and _G.AutoFeed == true then
 wait(8) -- Large since inventory loads slow as shit (Feels like 3 seconds though)
 print("Auto feed on")
 for _,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.CharacterSelection.Inventory.Inventory:GetChildren()) do
@@ -17,8 +16,8 @@ game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
 end
 end
 
-if game.PlaceId == 6284881984 and _G.AutoFeed == false and game:IsLoaded() then
-wait(2)
+if game.PlaceId == 6284881984 and _G.AutoFeed == false then
+wait(3)
 	print("Auto feed off")
 while wait() do
 game:GetService("ReplicatedStorage").Remotes.CreateRoom:InvokeServer(_G.Level, "RandomPassword")
@@ -28,7 +27,7 @@ end
 
 while wait() do
     pcall(function()
-        wait()
+        wait(.06)
     for _,v in pairs(game.Workspace.Living[game.Players.LocalPlayer.Name]:GetDescendants()) do
 		if v.Name == "Ban" then
 		    game.Workspace.Living[game.Players.LocalPlayer.Name].Ban:Destroy()
