@@ -1,6 +1,6 @@
 if game.PlaceId == 6284881984 and _G.AutoFeed == true then
-wait(8) -- Large since inventory loads slow as shit (Feels like 3 seconds though)
-print("Auto feed on")
+wait(7) -- Large since inventory loads slow as shit (Feels like 3 seconds though)
+warn("Auto Feeding Status: On")
 for _,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.CharacterSelection.Inventory.Inventory:GetChildren()) do
 if v:IsA("ImageLabel") then
    if v.Star.Visible == false then
@@ -17,8 +17,8 @@ end
 end
 
 if game.PlaceId == 6284881984 and _G.AutoFeed == false then
-wait(3)
-	print("Auto feed off")
+wait(3) -- Wait time is smaller since There is no need to wait for the inventory 2 load
+	warn("Auto Feeding Status: Off")
 while wait() do
 game:GetService("ReplicatedStorage").Remotes.CreateRoom:InvokeServer(_G.Level, "RandomPassword")
 game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
