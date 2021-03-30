@@ -25,6 +25,40 @@ game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
 end
 end
 
+if game.PlaceId == 6284881984 and _G.UsingSynapse == true then
+	local GameLoaded = game.Loaded:Wait()
+	if game:IsLoaded() then
+		_G.GameLoadCheck = true
+	end
+
+
+if game.PlaceId == 6284881984 and _G.UsingSynapse == true and _G.AutoFeed == true and _G.GameLoadCheck == true then
+	wait(5) -- Large since inventory loads slow as shit (Feels like 3 seconds though)
+warn("Auto Feeding Status: On")
+for _,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.CharacterSelection.Inventory.Inventory:GetChildren()) do
+if v:IsA("ImageLabel") then
+   if v.Star.Visible == false then
+   game:GetService("ReplicatedStorage").Remotes.FeedCharacter:InvokeServer({ [v.Key.Value]= true }, _G.CharacterID)
+   game:GetService("ReplicatedStorage").Remotes.CharacterSelection:InvokeServer()
+   game:GetService("ReplicatedStorage").Remotes.CharacterCheck:InvokeServer()
+end
+end
+end
+while wait() do
+game:GetService("ReplicatedStorage").Remotes.CreateRoom:InvokeServer(_G.Level, "RandomPassword")
+game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
+end
+end
+
+if game.PlaceId == 6284881984 and _G.UsingSynapse == true _G.AutoFeed == false and _G.GameLoadCheck == true then
+	wait(3) -- Wait time is smaller since There is no need to wait for the inventory 2 load
+	warn("Auto Feeding Status: Off")
+while wait() do
+game:GetService("ReplicatedStorage").Remotes.CreateRoom:InvokeServer(_G.Level, "RandomPassword")
+game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
+end
+end
+
 while wait() do
     pcall(function()
         wait(0.01)
