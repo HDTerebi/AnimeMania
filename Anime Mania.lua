@@ -32,6 +32,7 @@ if game.PlaceId == 6284881984 and _G.UsingSynapse == true then
 	if game:IsLoaded() then
 		_G.GameLoadCheck = true
 	end
+	end
 
 
 if game.PlaceId == 6284881984 and _G.UsingSynapse == true and _G.AutoFeed == true and _G.GameLoadCheck == true then
