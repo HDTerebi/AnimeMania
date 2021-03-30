@@ -1,3 +1,5 @@
+--The Way I Script Is Complete Shit, LOL
+
 if not game:IsLoaded() then
 	local Loading = Instance.new("Message",workspace)
 	Loading.Text = 'Waiting For The Game To Load....'
