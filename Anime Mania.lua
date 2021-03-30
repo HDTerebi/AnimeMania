@@ -1,4 +1,4 @@
-if game.PlaceId == 6284881984 and _G.AutoFeed == true then
+if game.PlaceId == 6284881984 and _G.AutoFeed == true and G.UsingSynapse == false then
 wait(7) -- Large since inventory loads slow as shit (Feels like 3 seconds though)
 	warn("Using Synapse: False")
 warn("Auto Feeding Status: On")
@@ -17,7 +17,7 @@ game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
 end
 end
 
-if game.PlaceId == 6284881984 and _G.AutoFeed == false then
+if game.PlaceId == 6284881984 and _G.AutoFeed == false and G.UsingSynapse == false then
 wait(3) -- Wait time is smaller since There is no need to wait for the inventory 2 load
 	warn("Using Synapse: False")
 	warn("Auto Feeding Status: Off")
