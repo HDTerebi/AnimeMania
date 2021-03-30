@@ -1,11 +1,5 @@
 --The Way I Script Is Complete Shit, LOL
 
-if not game:IsLoaded() then
-	local Loading = Instance.new("Message",workspace)
-	Loading.Text = 'Waiting For The Game To Load....'
-	game.Loaded:Wait()
-	Loading:Destroy()
-end
 local VirtualUser=game:service'VirtualUser'
 game:service'Players'.LocalPlayer.Idled:connect(function()
 VirtualUser:CaptureController()
