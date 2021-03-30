@@ -1,11 +1,4 @@
 --The Way I Script Is Complete Shit, LOL
-
-local VirtualUser=game:service'VirtualUser'
-game:service'Players'.LocalPlayer.Idled:connect(function()
-VirtualUser:CaptureController()
-VirtualUser:ClickButton2(Vector2.new())
-end)
-
 if game.PlaceId == 6284881984 and _G.AutoFeed == true and _G.UsingSynapse == false then
 wait(7) -- Large since inventory loads slow as shit (Feels like 3 seconds though)
 	warn("Using Synapse: False")
