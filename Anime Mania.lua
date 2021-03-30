@@ -1,5 +1,6 @@
 if game.PlaceId == 6284881984 and _G.AutoFeed == true then
 wait(7) -- Large since inventory loads slow as shit (Feels like 3 seconds though)
+	warn("Using Synapse: False")
 warn("Auto Feeding Status: On")
 for _,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.CharacterSelection.Inventory.Inventory:GetChildren()) do
 if v:IsA("ImageLabel") then
@@ -18,6 +19,7 @@ end
 
 if game.PlaceId == 6284881984 and _G.AutoFeed == false then
 wait(3) -- Wait time is smaller since There is no need to wait for the inventory 2 load
+	warn("Using Synapse: False")
 	warn("Auto Feeding Status: Off")
 while wait() do
 game:GetService("ReplicatedStorage").Remotes.CreateRoom:InvokeServer(_G.Level, "RandomPassword")
@@ -34,6 +36,7 @@ if game.PlaceId == 6284881984 and _G.UsingSynapse == true then
 
 if game.PlaceId == 6284881984 and _G.UsingSynapse == true and _G.AutoFeed == true and _G.GameLoadCheck == true then
 	wait(5) -- Large since inventory loads slow as shit (Feels like 3 seconds though)
+		warn("Using Synapse: True")
 warn("Auto Feeding Status: On")
 for _,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.CharacterSelection.Inventory.Inventory:GetChildren()) do
 if v:IsA("ImageLabel") then
@@ -52,6 +55,7 @@ end
 
 if game.PlaceId == 6284881984 and _G.UsingSynapse == true _G.AutoFeed == false and _G.GameLoadCheck == true then
 	wait(3) -- Wait time is smaller since There is no need to wait for the inventory 2 load
+		warn("Using Synapse: True")
 	warn("Auto Feeding Status: Off")
 while wait() do
 game:GetService("ReplicatedStorage").Remotes.CreateRoom:InvokeServer(_G.Level, "RandomPassword")
