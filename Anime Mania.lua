@@ -53,7 +53,7 @@ game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
 end
 end
 
-if game.PlaceId == 6284881984 and _G.UsingSynapse == true _G.AutoFeed == false and _G.GameLoadCheck == true then
+if game.PlaceId == 6284881984 and _G.UsingSynapse == true and _G.AutoFeed == false and _G.GameLoadCheck == true then
 	wait(3) -- Wait time is smaller since There is no need to wait for the inventory 2 load
 		warn("Using Synapse: True")
 	warn("Auto Feeding Status: Off")
