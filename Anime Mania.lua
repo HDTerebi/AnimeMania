@@ -1,4 +1,14 @@
 --The Way I Script Is Complete Shit, LOL
+local UTCSeconds = os.time()
+local SecondsInHour = 3600
+local ESTSeconds = UTCSeconds - (SecondsInHour * 4) -- UTC is 5 hours ahead of EST, so take away 5 hours
+local ESTDate = os.date("!*t", ESTSeconds)
+local hourString = tostring(ESTDate.hour > 12 and ESTDate.hour % 12 or ESTDate.hour)
+local minuteString = ESTDate.min < 10 and "0"..ESTDate.min or tostring(ESTDate.min)
+local period = ESTDate.hour > 12 and "PM" or "AM"
+local plr
+local char
+
 if game.PlaceId == 6284881984 and _G.AutoFeed == true and _G.UsingSynapse == false then
 wait(7) -- Large since inventory loads slow as shit (Feels like 3 seconds though)
 	warn("Using Synapse: False")
@@ -38,6 +48,19 @@ if game.PlaceId == 6284881984 and _G.UsingSynapse == true then
 
 if game.PlaceId == 6284881984 and _G.UsingSynapse == true and _G.AutoFeed == true and _G.GameLoadCheck == true then
 	wait(7) -- Large since inventory loads slow as shit (Feels like 3 seconds though)
+repeat wait()
+until game.Players.LocalPlayer and game.Players.LocalPlayer.Character
+plr = game.Players.LocalPlayer
+char = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:wait()
+local hump = char:WaitForChild("HumanoidRootPart")
+if game.PlaceId == 6284881984 then
+wait(.5)
+rconsolename("Anime Mania, Gems & Gold Counter")
+rconsoleinfo(game:GetService("Players").TheHiemenDestroyer.PlayerGui.Gaacha.Gems.Text)
+rconsoleinfo(game:GetService("Players").TheHiemenDestroyer.PlayerGui.Gaacha.Gold.Text)
+rconsoleinfo("Checked At "..hourString..":"..minuteString.." "..period)
+rconsoleinfo("-------------------------")
+end
 		warn("Using Synapse: True")
 warn("Auto Feeding Status: On")
 for _,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.CharacterSelection.Inventory.Inventory:GetChildren()) do
