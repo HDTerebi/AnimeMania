@@ -59,6 +59,7 @@ rconsolename("Anime Mania, Gems & Gold Counter")
 rconsoleinfo(game:GetService("Players").TheHiemenDestroyer.PlayerGui.Gaacha.Gems.Text)
 rconsoleinfo(game:GetService("Players").TheHiemenDestroyer.PlayerGui.Gaacha.Gold.Text)
 rconsoleinfo("Checked At "..hourString..":"..minuteString.." "..period)
+rconsoleinfo("Made By Terebi#0001")
 rconsoleinfo("-------------------------")
 end
 		warn("Using Synapse: True")
