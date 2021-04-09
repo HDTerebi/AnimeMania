@@ -8,6 +8,8 @@ local minuteString = ESTDate.min < 10 and "0"..ESTDate.min or tostring(ESTDate.m
 local period = ESTDate.hour > 12 and "PM" or "AM"
 local plr
 local char
+local HttpService = game:GetService("HttpService")
+local RandomPassword = HttpService:GenerateGUID(true)
 
 if game.PlaceId == 6284881984 and _G.AutoFeed == true and _G.UsingSynapse == false then
 wait(7) -- Large since inventory loads slow as shit (Feels like 3 seconds though)
@@ -23,7 +25,7 @@ end
 end
 end
 while wait() do
-game:GetService("ReplicatedStorage").Remotes.CreateRoom:InvokeServer(_G.Level, "RandomPassword")
+game:GetService("ReplicatedStorage").Remotes.CreateRoom:InvokeServer(_G.Level, RandomPassword)
 game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
 end
 end
