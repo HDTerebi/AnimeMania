@@ -83,6 +83,20 @@ end
 
 if game.PlaceId == 6284881984 and _G.UsingSynapse == true and _G.AutoFeed == false and _G.GameLoadCheck == true then
 	wait(4) -- Wait time is smaller since There is no need to wait for the inventory 2 load
+	repeat wait()
+until game.Players.LocalPlayer and game.Players.LocalPlayer.Character
+plr = game.Players.LocalPlayer
+char = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:wait()
+local hump = char:WaitForChild("HumanoidRootPart")
+if game.PlaceId == 6284881984 then
+wait(.5)
+rconsolename("Anime Mania, Gems & Gold Counter")
+rconsoleinfo(game:GetService("Players").LocalPlayer.PlayerGui.Gaacha.Gems.Text)
+rconsoleinfo(game:GetService("Players").LocalPlayer.PlayerGui.Gaacha.Gold.Text)
+rconsoleinfo("Checked At "..hourString..":"..minuteString.." "..period)
+rconsoleinfo("Made By Terebi#0001")
+rconsoleinfo("-------------------------")
+end
 		warn("Using Synapse: True")
 	warn("Auto Feeding Status: Off")
 while wait() do
