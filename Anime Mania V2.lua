@@ -1,3 +1,4 @@
+wait(.5)
 local UTCSeconds = os.time()
 local SecondsInHour = 3600
 local ESTSeconds = UTCSeconds - (SecondsInHour * 4) -- UTC is 5 hours ahead of EST, so take away 5 hours
@@ -10,7 +11,16 @@ local char
 local HttpService = game:GetService("HttpService")
 local RandomPassword = HttpService:GenerateGUID(true)
 
-if game.PlaceId == 6284881984 and _G.AutoFeed == true and _G.UsingSynapse == false then
+if game.PlaceId == 6284881984 and _G.AutoFeed == false and _G.AutoSell == false and _G.UsingSynapse == false then
+wait(7) -- Large since inventory loads slow as shit (Feels like 3 seconds though)
+while wait() do
+game:GetService("ReplicatedStorage").Remotes.CreateRoom:InvokeServer(_G.Level, RandomPassword)
+game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
+end
+end
+
+
+if game.PlaceId == 6284881984 and _G.AutoFeed == true and _G.AutoSell == false and _G.UsingSynapse == false then
 wait(7) -- Large since inventory loads slow as shit (Feels like 3 seconds though)
 	warn("Using Synapse: False")
 warn("Auto Feeding Status: On")
@@ -29,10 +39,28 @@ game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
 end
 end
 
-if game.PlaceId == 6284881984 and _G.AutoFeed == false and _G.UsingSynapse == false then
+if game.PlaceId == 6284881984 and _G.AutoFeed == false and _G.AutoSell == true and _G.UsingSynapse == false then
 wait(3) -- Wait time is smaller since There is no need to wait for the inventory 2 load
 	warn("Using Synapse: False")
 	warn("Auto Feeding Status: Off")
+for _,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.CharacterSelection.Inventory.Inventory:GetChildren()) do
+if v:IsA("ImageLabel") then
+    if v.Star.Visible == false and v.Name == _G.SaveUnit then
+        game:GetService("ReplicatedStorage").Remotes.Favorite:FireServer(v.Key.Value)
+        wait(5)
+        game:GetService("TeleportService"):Teleport(6284881984, LocalPlayer)
+end
+end
+end
+for _,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.CharacterSelection.Inventory.Inventory:GetChildren()) do
+if v:IsA("ImageLabel") then
+   if v.Star.Visible == false then
+   game:GetService("ReplicatedStorage").Remotes.SellCharacter:InvokeServer(v.Key.Value)
+   game:GetService("ReplicatedStorage").Remotes.CharacterSelection:InvokeServer()
+   game:GetService("ReplicatedStorage").Remotes.CharacterCheck:InvokeServer()
+end
+end
+end
 while wait() do
 game:GetService("ReplicatedStorage").Remotes.CreateRoom:InvokeServer(_G.Level, "RandomPassword")
 game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
