@@ -1,11 +1,3 @@
---The Way I Script Is Complete Shit, LOL
-_G.UsingSynapse = false
-_G.Level = "Level Name Here"
-_G.AutoFeed = false --Will not work along with AutoSell
-_G.AutoSell = false --Will not work along with AutoFeed
-_G.CharacterID = "Character ID Here" --Make sure you FAVORITE the units you don't want the script 2 consume
-_G.SaveUnit = "Unit Name Here" --Activated By Default
-
 local UTCSeconds = os.time()
 local SecondsInHour = 3600
 local ESTSeconds = UTCSeconds - (SecondsInHour * 4) -- UTC is 5 hours ahead of EST, so take away 5 hours
