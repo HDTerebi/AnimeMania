@@ -159,7 +159,7 @@ game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
 end
 end
 
-if game.PlaceId == 6284881984 and _G.UsingSynapse == true and _G.AutoFeed == false and _G.GameLoadCheck == true then
+if game.PlaceId == 6284881984 and _G.UsingSynapse == true and _G.AutoSell == false and _G.AutoFeed == false and _G.GameLoadCheck == true then
 	wait(4) -- Wait time is smaller since There is no need to wait for the inventory 2 load
 	repeat wait()
 until game.Players.LocalPlayer and game.Players.LocalPlayer.Character
