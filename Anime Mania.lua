@@ -1,7 +1,7 @@
 wait(.5)
 local UTCSeconds = os.time()
 local SecondsInHour = 3600
-local ESTSeconds = UTCSeconds - (SecondsInHour * 4) -- UTC is 5 hours ahead of EST, so take away 5 hours
+local ESTSeconds = UTCSeconds - (SecondsInHour * 7) -- UTC is 5 hours ahead of EST, so take away 5 hours
 local ESTDate = os.date("!*t", ESTSeconds)
 local hourString = tostring(ESTDate.hour > 12 and ESTDate.hour % 12 or ESTDate.hour)
 local minuteString = ESTDate.min < 10 and "0"..ESTDate.min or tostring(ESTDate.min)
