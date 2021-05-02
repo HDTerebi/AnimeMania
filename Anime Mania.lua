@@ -183,6 +183,11 @@ game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
 end
 end
 
+game:GetService("RunService").RenderStepped:Connect(function()
+    game.Players.LocalPlayer.Character:findFirstChildOfClass("Humanoid"):ChangeState(11)
+    game.Players.LocalPlayer.DevCameraOcclusionMode = "Invisicam"
+    end)
+
 while wait() do
     pcall(function()
         wait(0.01)
@@ -200,12 +205,7 @@ for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 		if v.Name == "ArenaClient" then
 		    game:GetService("Players").LocalPlayer.Backpack.ArenaClient.Disabled = true
 		end
-end
-
-game:GetService("RunService").RenderStepped:Connect(function()
-    game.Players.LocalPlayer.Character:findFirstChildOfClass("Humanoid"):ChangeState(11)
-    game.Players.LocalPlayer.DevCameraOcclusionMode = "Invisicam"
-    end)		
+end		
 			
 for i,v in pairs(game.Workspace.Living:GetChildren()) do
         if v:FindFirstChild("AI") then
