@@ -184,7 +184,7 @@ end
 end
 
 game:GetService"RunService".RenderStepped:Connect(function()
-game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):ChangeState(11)
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
 game.Players.LocalPlayer.DevCameraOcclusionMode = "Invisicam"
 end)
 
