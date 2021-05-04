@@ -183,10 +183,10 @@ game:GetService("ReplicatedStorage").Remotes.BeginRoom:FireServer()
 end
 end
 
-game:GetService("RunService").RenderStepped:Connect(function()
-    game.Players.LocalPlayer.Character:findFirstChildOfClass("Humanoid"):ChangeState(11)
-    game.Players.LocalPlayer.DevCameraOcclusionMode = "Invisicam"
-    end)
+game:GetService"RunService".RenderStepped:Connect(function()
+game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):ChangeState(11)
+game.Players.LocalPlayer.DevCameraOcclusionMode = "Invisicam"
+end)
 
 while wait() do
     pcall(function()
