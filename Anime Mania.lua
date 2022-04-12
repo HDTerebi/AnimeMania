@@ -210,7 +210,8 @@ end
 for i,v in pairs(game.Workspace.Living:GetChildren()) do
         if v:FindFirstChild("AI") then
             if v.Humanoid.Health > 0 then
-                    game.workspace.Living[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, 0, 5)
+		    game:GetService("ReplicatedStorage").Remotes.clCheck:InvokeServer("Dash")
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, 0, 5)
                     game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Light" })
 		    game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "1" })
                     game:GetService("Players").LocalPlayer.Backpack.Input.Remote:FireServer({ "Skill", "2" })
